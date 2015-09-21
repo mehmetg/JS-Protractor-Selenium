@@ -1,14 +1,8 @@
 // spec.js
-describe('Protractor Demo App2', function() {
+describe('Protractor Demo App1', function() {
   it('should have a title', function() {
-    browser.get('http://juliemr.github.io/protractor-demo/');
+    browser.get('http://yahoo.com');
 
-    expect(browser.getTitle()).toEqual('Super Calculator');
-  });
-
-  it('should have a title 1', function() {
-    browser.get('http://juliemr.github.io/protractor-demo/');
-
-    expect(browser.getTitle()).toEqual('Super Calculator');
+    expect(browser.getTitle()).toEqual('Yahoo');
   });
 });

@@ -13,15 +13,15 @@ exports.config = {
     browserName: 'firefox',
     version: '32',
     platform: 'OS X 10.10',
-    shardTestFiles: true,
     name: "firefox-tests",
-    maxInstances: 10
+    shardTestFiles: true,
+    maxInstances: 25
   }, {
     browserName: 'chrome',
     version: '41',
     platform: 'Windows 7',
-    shardTestFiles: true,
     name: "chrome-tests",
-    maxInstances: 10
+    shardTestFiles: true,
+    maxInstances: 25
   }]
 }
