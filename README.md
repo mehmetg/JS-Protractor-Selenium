@@ -6,7 +6,7 @@
 
 # Setup
 ```
-	npm install protractor
+	npm install
 ```
 
 # Running tests
