@@ -8,6 +8,7 @@
 ```
 	npm install
 ```
+If using a proxy, insert the port number on line 4 of conf.js and uncomment line 9.
 
 # Running tests
 ```

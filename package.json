@@ -5,5 +5,8 @@
   "main": "",
   "devDependencies": {
     "protractor": "2.1.0"
+  },
+  "dependencies": {
+    "https-proxy-agent": "^1.0.0"
   }
 }
