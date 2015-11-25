@@ -12,5 +12,5 @@ If using a proxy, insert the port number on line 4 of conf.js and uncomment line
 
 # Running tests
 ```
-	./node_modules/.bin/protractor conf.js
+	npm test
 ```
