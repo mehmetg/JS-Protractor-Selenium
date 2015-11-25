@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "description": "Parallel tests protractor  =============",
   "main": "",
+  "license": "MIT",
+  "repository" :
+  { "type" : "git"
+  , "url" : "git@github.com:ndmanvar/JS-Protractor-Selenium.git"
+  },
   "scripts": {
     "test": "./node_modules/.bin/protractor conf.js"
 
