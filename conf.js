@@ -9,7 +9,7 @@ exports.config = {
     sauceSeleniumAddress: 'localhost:' + sauceConnectRelayPort + '/wd/hub',
     sauceUser: process.env.SAUCE_USERNAME,
     sauceKey: process.env.SAUCE_ACCESS_KEY,
-    sauceAgent: agent,
+    //sauceAgent: agent,
 
     specs: ['specs/*spec.js'],
 
