@@ -3,7 +3,7 @@
 var HttpsProxyAgent = require("https-proxy-agent");
 
 var sauceConnectRelayPort = process.env.SELENIUM_PORT;
-var agent = new HttpsProxyAgent('https://localhost:56193');
+var agent = new HttpsProxyAgent('https://localhost:' + sauceConnectRelayPort);
 exports.config = {
 
     sauceSeleniumAddress: 'localhost:' + sauceConnectRelayPort + '/wd/hub',
