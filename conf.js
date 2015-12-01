@@ -1,19 +1,19 @@
 // conf.js
 
-var HttpsProxyAgent = require("https-proxy-agent");
+var HttpProxyAgent = require("http-proxy-agent");
 
 var sauceConnectRelayPort = process.env.SELENIUM_PORT;
-var agent = new HttpsProxyAgent('http://localhost:' + sauceConnectRelayPort);
+var agent = new HttpProxyAgent('http://localhost:' + sauceConnectRelayPort);
 exports.config = {
 
     sauceSeleniumAddress: 'localhost:' + sauceConnectRelayPort + '/wd/hub',
     sauceUser: process.env.SAUCE_USERNAME,
     sauceKey: process.env.SAUCE_ACCESS_KEY,
-    //sauceAgent: agent,
+    sauceAgent: agent,
 
     specs: ['specs/*spec.js'],
 
-    //restartBrowserBetweenTests: true,
+    restartBrowserBetweenTests: true,
 
     onPrepare: function(){
     var caps = browser.getCapabilities()
