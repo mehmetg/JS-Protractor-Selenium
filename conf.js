@@ -6,7 +6,7 @@ var sauceConnectRelayPort = process.env.SELENIUM_PORT;
 var agent = new HttpsProxyAgent('http://localhost:56193');
 exports.config = {
 
-    sauceSeleniumAddress: 'http://localhost:' + sauceConnectRelayPort + 'wd/hub',
+    sauceSeleniumAddress: 'http://localhost:' + sauceConnectRelayPort + '/wd/hub',
     sauceUser: process.env.SAUCE_USERNAME,
     sauceKey: process.env.SAUCE_ACCESS_KEY,
     sauceAgent: agent,
