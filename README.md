@@ -5,11 +5,15 @@
 ```
 
 # Setup
+
+* Install dependencies<br>
 ```
 	npm install
 ```
-If using a proxy, insert the port number on line 4 of conf.js and uncomment line 9.
+*If using a proxy, insert the ip and port number on line 4 of conf.js and uncomment line 9.<br>
+```
 
+```
 # Running tests
 ```
 	npm test
