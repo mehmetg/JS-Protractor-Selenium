@@ -1,9 +1,9 @@
 // conf.js
 
 var HttpsProxyAgent = require("https-proxy-agent");
-
 var sauceConnectRelayPort = process.env.SELENIUM_PORT;
 var agent = new HttpsProxyAgent('http://localhost:56193');
+
 exports.config = {
 
     sauceSeleniumAddress: 'localhost:' + sauceConnectRelayPort + '/wd/hub',
@@ -39,13 +39,9 @@ multiCapabilities: [{
 
         var printSessionId = function (jobName) {
             browser.getSession().then(function (session) {
-                var sId = 'SauceOnDemandSessionID=' + session.getId() + ' job-name=' + jobName + "\n";
-                fs.appendFile((process.env.BUILD_TAG + '.txt'), sId, function (err) {
-                    console.error(err);
-                });
-                console.log(sId);
+                console.log('SauceOnDemandSessionID=' + session.getId() + ' job-name=' + jobName);
             }
             printSessionId(process.env.BUILD_TAG);
         }
     }
-}
+};
