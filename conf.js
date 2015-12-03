@@ -1,9 +1,9 @@
 // conf.js
 
-var HttpProxyAgent = require("http-proxy-agent");
+var HttpsProxyAgent = require("https-proxy-agent");
 
 var sauceConnectRelayPort = process.env.SELENIUM_PORT;
-var agent = new HttpProxyAgent('http://localhost:' + sauceConnectRelayPort);
+var agent = new HttpsProxyAgent('http://localhost:56193');
 exports.config = {
 
     sauceSeleniumAddress: 'localhost:' + sauceConnectRelayPort + '/wd/hub',
@@ -35,13 +35,17 @@ multiCapabilities: [{
     maxInstances: 25
 }],
 
-    onComplete: function() {
+    onComplete: function () {
 
-    var printSessionId = function(jobName){
-        browser.getSession().then(function(session) {
-            console.log('SauceOnDemandSessionID=' + session.getId() + ' job-name=' + jobName);
-        });
+        var printSessionId = function (jobName) {
+            browser.getSession().then(function (session) {
+                var sId = 'SauceOnDemandSessionID=' + session.getId() + ' job-name=' + jobName + "\n";
+                fs.appendFile((process.env.BUILD_TAG + '.txt'), sId, function (err) {
+                    console.error(err);
+                });
+                console.log(sId);
+            }
+            printSessionId(process.env.BUILD_TAG);
+        }
     }
-    printSessionId("Insert Job Name Here");
-}
 }
