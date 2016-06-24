@@ -9,9 +9,9 @@ var agent = new HttpsProxyAgent(PROXY_URL_WITH_PORT);
 exports.config = {
   sauceUser: process.env.SAUCE_USERNAME,
   sauceKey: process.env.SAUCE_ACCESS_KEY,
-  sauceAgent: agent,
-  webDriverProxy: PROXY_URL_WITH_PORT
-  //seleniumAddress: 'http://ondemand.saucelabs.com:80/wd/hub',
+  //Uncomment the lines below for proxy use.
+  //sauceAgent: agent,
+  //webDriverProxy: PROXY_URL_WITH_PORT,
   specs: ['specs/*spec.js'],
 
   restartBrowserBetweenTests: true,
