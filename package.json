@@ -4,7 +4,7 @@
   "description": "Parallel tests protractor",
   "main": "",
   "devDependencies": {
-    "protractor": "2.2.0",
+    "protractor": "3.2.2",
     "https-proxy-agent": "*",
     "q": "*",
     "jasmine-reporters": "*",

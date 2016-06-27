@@ -3,7 +3,7 @@ var jasmineReporters = require('jasmine-reporters');
 var HttpsProxyAgent = require('https-proxy-agent');
 var q = require('q');
 
-const PROXY_URL_WITH_PORT = "http://phxappgwe2-vip.phx.aexp.com:9090";
+const PROXY_URL_WITH_PORT = "http://<proxy>:<80>";
 var agent = new HttpsProxyAgent(PROXY_URL_WITH_PORT);
 
 exports.config = {
@@ -29,6 +29,9 @@ exports.config = {
           version: '32',
           platform: 'OS X 10.10',
           name: "firefox-tests",
+          //Set individually in the this section or below
+          //"tunnel-identifier" = "myTunnelId",
+          //"parent-tunnel" = "myParent",
           shardTestFiles: true,
           maxInstances: 25
       }, {
@@ -36,11 +39,17 @@ exports.config = {
           version: '41',
           platform: 'Windows 7',
           name: "chrome-tests",
+          //Set individually in the this section or below
+          //"tunnel-identifier" = "myTunnelId",
+          //"parent-tunnel" = "myParent",
           shardTestFiles: true,
           maxInstances: 25
       }];
       for (var i = 0; i < multiCaps.length; i++) {
           multiCaps[i].build = process.env.BUILD_TAG;
+          //This should be equivalent to the one above
+          //multiCaps[i]["tunnel-identifier"] = "myTunnelId";
+          //multiCaps[i]["parent-tunnel"] = "myParent";
       }
       deferred.resolve(multiCaps);
       return deferred.promise;
